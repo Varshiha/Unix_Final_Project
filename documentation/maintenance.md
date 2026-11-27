@@ -84,3 +84,31 @@ exit
 
 ### Implementation Decision
 The maintenance script will use `apt clean` to remove unnessary cached package file and dispaly the cache size before and after cleanup.
+
+## 4. Software Updates
+
+### Objective
+Keep installed software up to date to improve the security, stability and reliability of refurbished computers.
+
+### Commands Used
+```bash
+su -
+apt update
+apt list --upgradable
+apt upgrade --simulate
+exit
+```
+### Command Explanations
+- `apt update` : Refreshes information about availabl software packages and versions
+- `apt list --upgradable` : Display installed packages that ahve newer versions available
+- `apt upgrade` : Dowloads and installs available software upgrades
+- `--simulate` : Previews the proposed changes without modifying intalled packages
+
+### Results
+A total of 92 MB of repository information was downloaded.
+207 packages were identified as available for upgrading.
+No software upgrades were installed during this test.
+
+### Implementation Decision
+The maintenance script will allow authorized users to check for available updates and install upgrades.
+Since the computers may have limited storage, the user should review the dowloaded size and additional dis space requirements before confirming an upgrade.
